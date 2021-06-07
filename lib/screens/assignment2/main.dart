@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:assignment9/main.dart';
 
 class Assignment2 extends StatelessWidget {
@@ -7,7 +8,7 @@ class Assignment2 extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         home: Scaffold(
-          appBar: AppBar(title: Center(child: Text('Drawer – MAD'))),
+          appBar: AppBar(title: Center(child: Text('App Drawer '))),
           drawer: Drawer(
               child: ListView(
             children: [
@@ -51,6 +52,56 @@ class Assignment2 extends StatelessWidget {
               DrawerList()
             ],
           )),
+          body: CarouselSlider(
+            options: CarouselOptions(
+              height: 600,
+              enableInfiniteScroll: false,
+              scrollDirection: Axis.horizontal,
+            ),
+            items: [
+              Column(
+                children: [
+                  Center(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 40.0, bottom: 40),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(3),
+                        child: Image.network(
+                          'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Circle-icons-computer.svg/1200px-Circle-icons-computer.svg.png',
+                          height: 300,
+                          width: 300,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'App Drawer',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  Center(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 40.0, bottom: 40),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(3),
+                        child: Image.network(
+                          'https://static.thenounproject.com/png/2479489-200.png',
+                          height: 300,
+                          width: 300,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'Assignment where we have to make an App Drawer.',
+                  ),
+                ],
+              ),
+            ],
+          ),
         ));
   }
 }
