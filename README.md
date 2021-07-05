@@ -1,6 +1,4 @@
-# assignment9
-
-A new Flutter project.
+> All of my flutter assignments from CS-441 in a single app
 
 ## Getting Started
 
